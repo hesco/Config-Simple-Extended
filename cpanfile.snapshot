@@ -1,0 +1,87 @@
+# carton snapshot format: version 1.0
+DISTRIBUTIONS
+  Config-Simple-4.58
+    pathname: S/SH/SHERZODR/Config-Simple-4.58.tar.gz
+    provides:
+      Config::Simple 4.58
+    requirements:
+      ExtUtils::MakeMaker 0
+  Devel-Symdump-2.10
+    pathname: A/AN/ANDK/Devel-Symdump-2.10.tar.gz
+    provides:
+      Devel::Symdump 2.10
+      Devel::Symdump::Export undef
+    requirements:
+      Compress::Zlib 0
+      ExtUtils::MakeMaker 0
+      Test::More 0
+      perl 5.004
+  File-PathInfo-1.27
+    pathname: L/LE/LEOCHARRE/File-PathInfo-1.27.tar.gz
+    provides:
+      File::PathInfo 1.27
+    requirements:
+      Cwd 0.1
+      ExtUtils::MakeMaker 0
+      Smart::Comments 0
+      Time::Format 0.01
+  Pod-Coverage-0.23
+    pathname: R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
+    provides:
+      Pod::Coverage 0.23
+      Pod::Coverage::CountParents undef
+      Pod::Coverage::ExportOnly undef
+      Pod::Coverage::Extractor 0.23
+      Pod::Coverage::Overloader undef
+    requirements:
+      Devel::Symdump 2.01
+      ExtUtils::MakeMaker 0
+      Pod::Find 0.21
+      Pod::Parser 1.13
+      Test::More 0
+  Smart-Comments-1.000005
+    pathname: D/DC/DCONWAY/Smart-Comments-1.000005.tar.gz
+    provides:
+      Smart::Comments 1.000005
+    requirements:
+      Data::Dumper 0
+      ExtUtils::MakeMaker 0
+      Filter::Simple 0
+      List::Util 0
+      Test::More 0
+      Text::Balanced 0
+      version 0
+  Test-Pod-1.48
+    pathname: D/DW/DWHEELER/Test-Pod-1.48.tar.gz
+    provides:
+      Test::Pod 1.48
+    requirements:
+      File::Find 0
+      File::Spec 0
+      Module::Build 0.30
+      Pod::Simple 3.05
+      Test::Builder::Tester 1.02
+      Test::More 0.62
+  Test-Pod-Coverage-1.08
+    pathname: P/PE/PETDANCE/Test-Pod-Coverage-1.08.tar.gz
+    provides:
+      Nopod undef
+      Nosymbols undef
+      PC_Inherited undef
+      PC_Inherits undef
+      Privates undef
+      Simple undef
+      Test::Pod::Coverage 1.08
+    requirements:
+      ExtUtils::MakeMaker 0
+      Pod::Coverage 0
+      Test::Builder::Tester 0
+      Test::More 0
+  Time-Format-1.12
+    pathname: R/RO/ROODE/Time-Format-1.12.tar.gz
+    provides:
+      Time::Format 1.12
+    requirements:
+      Module::Build 0.4
+      Test::Simple 0.40
+      Time::Local 1.07
