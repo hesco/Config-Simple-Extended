@@ -41,6 +41,8 @@ my $job_cfg = Config::Simple::Extended->inherit(
      filename => '$cfg_path/client_name/app_job_id.ini',
 );
 
+my $arrayref_of_stanza_names = $cfg->get_stanzas();
+
   This is intended to provide, before this is complete
     ->inherit() to inherit configurations, done;
     ->parse_config_directory() choosing configuration by url;
@@ -243,14 +245,14 @@ sub inherit {
   $cfg->{'_FILE_NAMES'} = \@cfg_filenames;
   $f->set( $args->{'filename'} ) or die('file does not exist');
   my $cfg_file = $f->abs_path;
-  my $cfg_overload = Config::Simple->new( $cfg_file );
+  my $cfg_overload = Config::Simple::Extended->new( $cfg_file );
   print 'Our $cfg_overload applies this file: ' 
       . $args->{'filename'} 
       . ' and looks like this: ' 
       . Dumper( $cfg_overload )
           if( $args->{'debug'} );
 
-  my $stanzas = get_stanzas($cfg_overload);
+  my $stanzas = $cfg_overload->get_stanzas();
   foreach my $stanza ( @{$stanzas} ){
     my %stanza = %{$cfg_overload->get_block( $stanza )};
     foreach my $param_key (keys %stanza){
@@ -264,7 +266,7 @@ sub inherit {
   return $cfg; 
 }
 
-=head2 my $array_ref = get_stanzas( $cfg );
+=head2 my $array_ref = $cfg->get_stanzas();
 
 If you use a hierarchical configuration file structure, with values 
 assigned to keys inside of stanzas, you can use this method to 
@@ -275,10 +277,10 @@ denoted as [stanza_name], as if it were a one element arrayref.
 =cut
 
 sub get_stanzas {
-  my $cfg = shift;
+  my $self = shift;
   my @stanzas;
   my %stanza_keys;
-  my %config = $cfg->vars();
+  my %config = $self->vars();
   foreach ( keys %config ){
     $_ =~ s/\..*//;
     $stanza_keys{$_} = 1;
@@ -357,7 +359,7 @@ for the applications I write.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2008-2013 Hugh Esco, all rights reserved.
+Copyright 2008-2016 Hugh Esco, all rights reserved.
 
 This program is released under the following license: Gnu
 Public License.

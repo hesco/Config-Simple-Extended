@@ -14,8 +14,16 @@ The second parses a url and returns a configuration file path
 based on that url, permitting a single code installation to
 host multiple instances of an application based on aliased
 domains and subdirectories of domains.  The third, planned
-but not yet coded public method will permit the parsing of
-heredoc data into a configuration hash.
+though still not coded public method will permit the parsing of
+heredoc data into a configuration hash; though as it turns out, 
+I seem to use Template for that purpose instead and that third 
+method may never materialize.  
+
+But this evening I found a need to expose a function I wrote 
+years ago to support the ->inherit method, for other uses.  So 
+v0.16 will now include a new ->get_stanzas() method, to return 
+an arrayref of stanza names from the config file.  Hope others 
+might find it handy as well.  
 
 INSTALLATION
 
@@ -50,7 +58,7 @@ You can also look for information at:
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2008 Hugh Esco
-dba http://CampaignFoundations.com/
+Copyright (C) 2008-2016 Hugh Esco
+dba/ http://CampaignFoundations.com/
 
 This program is released under the following license: gpl
