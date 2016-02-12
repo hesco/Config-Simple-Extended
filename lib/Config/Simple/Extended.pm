@@ -9,7 +9,7 @@ use Data::Dumper;
 use lib "$FindBin::Bin/../../../local/lib/perl5";
 use File::PathInfo;
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 =head1 NAME
 
